@@ -1,0 +1,19 @@
+{
+	"name": "ds_adfparameters",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "github_http_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "Shreyas-Katale/Azure-Data-Engineering-Project-For-SalesAnalysis-And-Reporting/refs/heads/main/adf-parameters.json"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

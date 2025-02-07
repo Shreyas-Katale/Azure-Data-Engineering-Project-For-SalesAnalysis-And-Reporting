@@ -1,0 +1,39 @@
+{
+	"name": "ds_dynamicSink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storagedatalake_ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_sinkFolder": {
+				"type": "String"
+			},
+			"p_dynamicFileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().p_dynamicFileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().p_sinkFolder",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

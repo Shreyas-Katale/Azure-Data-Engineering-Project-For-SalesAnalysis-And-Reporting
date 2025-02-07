@@ -1,0 +1,31 @@
+{
+	"name": "ds_GitDynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "github_http_ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_GithubrelativeURL": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().p_GithubrelativeURL",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
